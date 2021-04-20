@@ -71,7 +71,7 @@ def remotegetblock():
 t.sleep(5)
 while True:
     try:
-        blocks()
+        remotegetblock()
     except:
         print("\n")
         sys.exit(101)
