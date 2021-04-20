@@ -60,7 +60,7 @@ def blocks():
             b = str(a)
 
 
-#t.sleep(5)
+t.sleep(5)
 while True:
     try:
         blocks()
