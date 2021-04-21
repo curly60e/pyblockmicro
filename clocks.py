@@ -8,9 +8,40 @@ from cfonts import render, say
 import time as t
 import requests
 import subprocess 
+import random
 
-ver = "PyBLOCK Micro v0.0.1"
 
+ver = "PyBLOCK Micro v0.0.2"
+
+faceshappy = {
+    "SLEEP" : '(⇀‿‿↼)',
+    "SLEEP2" : '(≖‿‿≖)',
+    "AWAKE" : '(◕‿‿◕)',
+    "INTENSE" : '(°▃▃°)',
+    "COOL" : '(⌐■_■)',
+    "HAPPY" : '(•‿‿•)',
+    "GRATEFUL" : '(^‿‿^)',
+    "EXCITED" : '(ᵔ◡◡ᵔ)',
+    "MOTIVATED" : '(☼‿‿☼)',
+    "SMART" : '(✜‿‿✜)',
+    "FRIEND" : '(♥‿‿♥)'
+    }
+
+faceslookaround = {
+    "LOOK_R" : '( ⚆_⚆)',
+    "LOOK_L" : '(☉_☉ )',
+    "LOOK_R_HAPPY" : '( ◕‿◕)',
+    "LOOK_L_HAPPY" : '(◕‿◕ )'
+    }
+
+facessad = {
+    "BORED" : '(-__-)',
+    "DEMOTIVATED" : '(≖__≖)',
+    "LONELY" : '(ب__ب)',
+    "SAD" : '(╥☁╥ )',
+    "ANGRY" : '(-_-)',
+    "BROKEN" : '(☓‿‿☓)'
+    }
 
 def clear(): # clear the screen
     os.system('cls' if os.name=='nt' else 'clear')
@@ -38,10 +69,11 @@ def blocks():
         a = di
         b = str(a)
         clear()
+        pp = random.choice(list(faceslookaround.values())).encode('utf-8').decode('latin-1')
         output5 = subprocess.check_output(['sudo', 'iwgetid'])
         z = str(output5)
         print(ver + " ---> Connected to SSID: " + z.split('"')[1])
-        print("BLOCK")
+        print("BLOCK " + str(pp))
         output = render(str(b), colors=['white', 'black'], align='center', font='simple')
         print(output)
         print("PRICE")
@@ -57,18 +89,30 @@ def blocks():
                 clear()
                 output5 = subprocess.check_output(['sudo', 'iwgetid'])
                 z = str(output5)
+                pp = random.choice(list(faceshappy.values())).encode('utf-8').decode('latin-1')
                 print(ver + " ---> Connected to SSID: " + z.split('"')[1])
-                print("BLOCK")
+                print("BLOCK " + str(pp))
                 output = render(str(a), colors=['white', 'black'], align='center', font='simple')
                 print(output)
                 print("PRICE")
                 CoingeckoPP()
+                t.sleep(5)
                 b = str(a) 
+                pp = random.choice(list(faceslookaround.values())).encode('utf-8').decode('latin-1')
+                clear()
+                print(ver + " ---> Connected to SSID: " + z.split('"')[1])
+                print("BLOCK " + str(pp))
+                output = render(str(a), colors=['white', 'black'], align='center', font='simple')
+                print(output)
+                print("PRICE")
+                CoingeckoPP()
     except:
-        os.system("pyblock3 clocks.py")
-        print("Bad Connection... Restarting...")
+        pp = random.choice(list(facessad.values())).encode('utf-8').decode('latin-1')
+        os.system("python3 clocks.py")
+        print("Bad Connection... Restarting... " + str(pp))
 
-
+pp = random.choice(list(faceslookaround.values())).encode('utf-8').decode('latin-1')
+print(pp)
 t.sleep(5)
 while True:
     try:
