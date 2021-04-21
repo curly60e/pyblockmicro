@@ -7,7 +7,7 @@ from pycoingecko import CoinGeckoAPI
 from cfonts import render, say
 import time as t
 import requests
-import qrcode
+import subprocess 
 
 ver = "PyBLOCK Micro v0.0.1"
 
@@ -38,7 +38,9 @@ def blocks():
         a = di
         b = str(a)
         clear()
-        print(ver)
+        output5 = subprocess.check_output(['sudo', 'iwgetid'])
+        z = str(output5)
+        print(ver + " ---> Connected to SSID: " + z.split('"')[1])
         print("BLOCK")
         output = render(str(b), colors=['white', 'black'], align='center', font='simple')
         print(output)
@@ -53,7 +55,9 @@ def blocks():
             a = di
             if x != str(a):
                 clear()
-                print(ver)
+                output5 = subprocess.check_output(['sudo', 'iwgetid'])
+                z = str(output5)
+                print(ver + " ---> Connected to SSID: " + z.split('"')[1])
                 print("BLOCK")
                 output = render(str(a), colors=['white', 'black'], align='center', font='simple')
                 print(output)
