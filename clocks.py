@@ -96,7 +96,7 @@ def blocks():
                 print(output)
                 print("PRICE")
                 CoingeckoPP()
-                t.sleep(5)
+                t.sleep(15)
                 b = str(a) 
                 pp = random.choice(list(faceslookaround.values())).encode('utf-8').decode('latin-1')
                 clear()
