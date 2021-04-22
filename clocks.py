@@ -9,7 +9,8 @@ import time as t
 import requests
 import subprocess 
 import random
-
+from stem import Signal
+from stem.control import Controller
 
 ver = "PyBLOCK Micro v0.0.2"
 
@@ -72,7 +73,7 @@ def blocks():
         pp = random.choice(list(faceslookaround.values())).encode('utf-8').decode('latin-1')
         output5 = subprocess.check_output(['sudo', 'iwgetid'])
         z = str(output5)
-        print(ver + " ---> Connected to SSID: " + z.split('"')[1])
+        print(ver + " ---> Connected to: " + z.split('"')[1] + " & Tor")
         print("BLOCK " + str(pp))
         output = render(str(b), colors=['white', 'black'], align='center', font='simple')
         print(output)
@@ -90,7 +91,7 @@ def blocks():
                 output5 = subprocess.check_output(['sudo', 'iwgetid'])
                 z = str(output5)
                 pp = random.choice(list(faceshappy.values())).encode('utf-8').decode('latin-1')
-                print(ver + " ---> Connected to SSID: " + z.split('"')[1])
+                print(ver + " ---> Connected to: " + z.split('"')[1] + " & Tor")
                 print("BLOCK " + str(pp))
                 output = render(str(a), colors=['white', 'black'], align='center', font='simple')
                 print(output)
@@ -100,7 +101,7 @@ def blocks():
                 b = str(a) 
                 pp = random.choice(list(faceslookaround.values())).encode('utf-8').decode('latin-1')
                 clear()
-                print(ver + " ---> Connected to SSID: " + z.split('"')[1])
+                print(ver + " ---> Connected to: " + z.split('"')[1] + " & Tor")
                 print("BLOCK " + str(pp))
                 output = render(str(a), colors=['white', 'black'], align='center', font='simple')
                 print(output)
@@ -111,11 +112,22 @@ def blocks():
         os.system("python3 clocks.py")
         print("Bad Connection... Restarting... " + str(pp))
 
-pp = random.choice(list(faceslookaround.values())).encode('utf-8').decode('latin-1')
-print(pp)
-t.sleep(5)
+
+
 while True:
     try:
+        clear()
+        with Controller.from_port(port = 9051) as controller:
+            controller.authenticate(password='B4C0D10DB03D880260505745B66DA5595E5E98543990DF5404728B2927')    
+            clear()
+            print("Success!")
+            controller.signal(Signal.NEWNYM)
+            print("New Tor connection processed")
+            t.sleep(3)
+            print("Starting PyBLOCK Micro")
+            pp = random.choice(list(faceslookaround.values())).encode('utf-8').decode('latin-1')
+            print(pp)
+            t.sleep(5)
         blocks()
     except:
         print("\n")
