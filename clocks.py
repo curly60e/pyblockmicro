@@ -12,7 +12,7 @@ import random
 from stem import Signal
 from stem.control import Controller
 
-ver = "PyBLOCK Micro v0.0.3"
+ver = "PyBLOCK Micro v0.0.4"
 
 faceshappy = {
     "SLEEP" : '(⇀‿‿↼)',
@@ -103,7 +103,7 @@ def blocks():
         os.system("python3 clocks.py")
         print("Bad Connection... Restarting... " + str(pp))
 
-
+#def checkupdate():
 
 while True:
     try:
@@ -115,6 +115,22 @@ while True:
             controller.signal(Signal.NEWNYM)
             print("New Tor connection processed")
             t.sleep(3)
+            r = requests.get('https://raw.githubusercontent.com/curly60e/pyblockmicro/main/ver.txt')
+            r.headers['Content-Type']
+            n = r.text
+            di = json.loads(n)
+            if di['version'] == ver:
+                q = print(" ")
+            else:
+                gitfetch = "git fetch"
+                gitchekcout = "git checkout origin/master -- .bashrc README.txt clocks.py clocksLOCAL.py papertty.service requirements.txt start.sh torrc "
+                clear()
+                b = os.popen(gitfetch).read()
+                a = os.popen(gitchekcout).read()
+                print(b)
+                print(a)
+                os.system("pip3 install -r requirements.txt")
+                os.system("python3 clocks.py")
             print("Starting PyBLOCK Micro")
             pp = random.choice(list(faceslookaround.values())).encode('utf-8').decode('latin-1')
             print(pp)
