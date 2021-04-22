@@ -20,8 +20,8 @@ CONNECT TO A WIFI NETWORK
 ---
 * sudo raspi-config
 
-Interfacing Options -> SPI -> Yes
-Reboot
+- Interfacing Options -> SPI -> Yes
+  * Reboot
 ---
 * sudo apt install ttf-mscorefonts-installer
 ---
@@ -45,3 +45,17 @@ Reboot
 * sudo cp torrc /etc/tor/
 ---
 * reboot
+
+
+DONATE 
+Samourai Wallet Paynym:
+
+<img src="images/codeimage.png" width="30%" />
+
+Lightning KeySend:
+
+<img src="images/keysend.png" width="30%" />
+
+Monero:
+
+<img src="images/qrcode.png" width="20%" />
