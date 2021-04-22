@@ -12,7 +12,7 @@ import random
 from stem import Signal
 from stem.control import Controller
 
-ver = "0.0.7"
+ver = "0.0.8"
 
 faceshappy = {
     "SLEEP" : '(⇀‿‿↼)',
@@ -111,7 +111,6 @@ while True:
             print("Success!")
             controller.signal(Signal.NEWNYM)
             print("New Tor connection processed")
-            t.sleep(3)
             print("Starting PyBLOCK Micro")
             pp = random.choice(list(faceslookaround.values())).encode('utf-8').decode('latin-1')
             print(pp)
