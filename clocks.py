@@ -12,7 +12,7 @@ import random
 from stem import Signal
 from stem.control import Controller
 
-ver = "0.0.6"
+ver = "0.0.7"
 
 faceshappy = {
     "SLEEP" : '(⇀‿‿↼)',
