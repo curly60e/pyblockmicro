@@ -105,6 +105,18 @@ def blocks():
 
 while True:
     try:
+        with Controller.from_port(port = 9051) as controller:
+            controller.authenticate(password='B4C0D10DB03D880260505745B66DA5595E5E98543990DF5404728B2927')    
+            clear()
+            print("Success!")
+            controller.signal(Signal.NEWNYM)
+            print("New Tor connection processed")
+            t.sleep(3)
+            print("Starting PyBLOCK Micro")
+            pp = random.choice(list(faceslookaround.values())).encode('utf-8').decode('latin-1')
+            print(pp)
+            t.sleep(5)
+            clear()
         r = requests.get('https://raw.githubusercontent.com/curly60e/pyblockmicro/main/ver.txt')
         r.headers['Content-Type']
         n = r.text
@@ -121,18 +133,6 @@ while True:
             print(a)
             os.system("pip3 install -r requirements.txt")
             os.system("sudo chown root:root start.sh;sudo chmod 700 start.sh")
-        with Controller.from_port(port = 9051) as controller:
-            controller.authenticate(password='B4C0D10DB03D880260505745B66DA5595E5E98543990DF5404728B2927')    
-            clear()
-            print("Success!")
-            controller.signal(Signal.NEWNYM)
-            print("New Tor connection processed")
-            t.sleep(3)
-            print("Starting PyBLOCK Micro")
-            pp = random.choice(list(faceslookaround.values())).encode('utf-8').decode('latin-1')
-            print(pp)
-            t.sleep(5)
-            clear()
         blocks()
     except:
         print("\n")
