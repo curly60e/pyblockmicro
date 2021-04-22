@@ -23,6 +23,9 @@ sudo systemctl daemon-reload
 sudo systemctl enable papertty
 sudo systemctl start papertty
 ---
+sudo apt install git
+git clone https://github.com/curly60e/pyblockmicro.git
+cd pyblockmicro
 sudo cp .bashrc /home/pi/ 
 sudo cp clocks.py /home/pi/
 cp start.sh /home/pi/
@@ -31,6 +34,7 @@ sudo chown root:root start.sh;sudo chmod 700 start.sh
 ---
 sudo pip3 install -r requirements.txt
 ---
+cd pyblockmicro
 sudo cp torrc /etc/tor/
 ---
 reboot
