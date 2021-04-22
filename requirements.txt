@@ -5,7 +5,6 @@
 art
 qrcode
 requests
-psutil
 simplejson
 certifi
 chardet
@@ -21,7 +20,6 @@ termcolor
 pycoingecko
 protobuf==3.13.0
 six==1.15.0
-robohash
 pillow
 numpy
 grpcio
