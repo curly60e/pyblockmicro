@@ -103,43 +103,40 @@ def blocks():
         os.system("python3 clocks.py")
         print("Bad Connection... Restarting... " + str(pp))
 
-def getupdate():
-    r = requests.get('https://raw.githubusercontent.com/curly60e/pyblockmicro/main/ver.txt')
-    r.headers['Content-Type']
-    n = r.text
-    di = json.loads(n)
-    print(di['version'])
-    t.sleep(50)
-    if di['version'] == ver:
-        print(" ")
-    else:
-        gitfetch = "git fetch"
-        gitchekcout = "git checkout origin/main -- .bashrc README.txt clocks.py clocksLOCAL.py papertty.service requirements.txt start.sh torrc "
-        clear()
-        b = os.popen(gitfetch).read()
-        a = os.popen(gitchekcout).read()
-        print(b)
-        print(a)
-        os.system("pip3 install -r requirements.txt")
-
 def tor():
-    with Controller.from_port(port = 9051) as controller:
-        controller.authenticate(password='B4C0D10DB03D880260505745B66DA5595E5E98543990DF5404728B2927')    
-        clear()
-        print("Success!")
-        controller.signal(Signal.NEWNYM)
-        print("New Tor connection processed")
-        t.sleep(3)
-        print("Starting PyBLOCK Micro")
-        pp = random.choice(list(faceslookaround.values())).encode('utf-8').decode('latin-1')
-        print(pp)
-        t.sleep(5)
+
 
 while True:
     try:
-        getupdate()
-        tor()
-        clear()
+        r = requests.get('https://raw.githubusercontent.com/curly60e/pyblockmicro/main/ver.txt')
+        r.headers['Content-Type']
+        n = r.text
+        di = json.loads(n)
+        #print(di['version'])
+        t.sleep(50)
+        if di['version'] == ver:
+            print(" ")
+        else:
+            gitfetch = "git fetch"
+            gitchekcout = "git checkout origin/main -- .bashrc README.txt clocks.py clocksLOCAL.py papertty.service requirements.txt start.sh torrc "
+            clear()
+            b = os.popen(gitfetch).read()
+            a = os.popen(gitchekcout).read()
+            print(b)
+            print(a)
+            os.system("pip3 install -r requirements.txt")
+        with Controller.from_port(port = 9051) as controller:
+            controller.authenticate(password='B4C0D10DB03D880260505745B66DA5595E5E98543990DF5404728B2927')    
+            clear()
+            print("Success!")
+            controller.signal(Signal.NEWNYM)
+            print("New Tor connection processed")
+            t.sleep(3)
+            print("Starting PyBLOCK Micro")
+            pp = random.choice(list(faceslookaround.values())).encode('utf-8').decode('latin-1')
+            print(pp)
+            t.sleep(5)
+            clear()
         blocks()
     except:
         print("\n")
