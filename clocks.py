@@ -12,7 +12,7 @@ import random
 from stem import Signal
 from stem.control import Controller
 
-ver = "0.0.4"
+ver = "0.0.5"
 
 faceshappy = {
     "SLEEP" : '(⇀‿‿↼)',
@@ -73,7 +73,7 @@ def blocks():
         pp = random.choice(list(faceslookaround.values())).encode('utf-8').decode('latin-1')
         output5 = subprocess.check_output(['sudo', 'iwgetid'])
         z = str(output5)
-        print(ver + " ---> Connected to: " + z.split('"')[1] + " & Tor")
+        print("PyBLOCK Micro " + ver + " ---> Connected to: " + z.split('"')[1] + " & Tor")
         print("BLOCK " + str(pp))
         output = render(str(b), colors=['white', 'black'], align='center', font='simple')
         print(output)
@@ -91,7 +91,7 @@ def blocks():
                 output5 = subprocess.check_output(['sudo', 'iwgetid'])
                 z = str(output5)
                 pp = random.choice(list(faceshappy.values())).encode('utf-8').decode('latin-1')
-                print(ver + " ---> Connected to: " + z.split('"')[1] + " & Tor")
+                print("PyBLOCK Micro " + ver + " ---> Connected to: " + z.split('"')[1] + " & Tor")
                 print("BLOCK " + str(pp))
                 output = render(str(a), colors=['white', 'black'], align='center', font='simple')
                 print(output)
@@ -103,17 +103,12 @@ def blocks():
         os.system("python3 clocks.py")
         print("Bad Connection... Restarting... " + str(pp))
 
-def tor():
-
-
 while True:
     try:
         r = requests.get('https://raw.githubusercontent.com/curly60e/pyblockmicro/main/ver.txt')
         r.headers['Content-Type']
         n = r.text
         di = json.loads(n)
-        #print(di['version'])
-        t.sleep(50)
         if di['version'] == ver:
             print(" ")
         else:
