@@ -12,7 +12,7 @@ import random
 from stem import Signal
 from stem.control import Controller
 
-ver = "0.0.8"
+ver = "0.0.9"
 
 faceshappy = {
     "SLEEP" : '(⇀‿‿↼)',
@@ -131,6 +131,7 @@ while True:
             print(b)
             print(a)
             os.system("pip3 install -r requirements.txt")
+            os.system("sudo apt update && sudo apt upgrade")
             os.system("sudo chown root:root start.sh;sudo chmod 700 start.sh")
         blocks()
     except:
