@@ -47,7 +47,8 @@ CONNECT TO A WIFI NETWORK
 * reboot
 
 
-DONATE 
+DONATE PYBLOCK
+
 Samourai Wallet Paynym:
 
 <img src="images/codeimage.png" width="30%" />
