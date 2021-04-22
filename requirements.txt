@@ -24,7 +24,6 @@ six==1.15.0
 robohash
 pillow
 numpy
-googleapis-common-protos==1.52.0
 grpcio
 pdfminer
 service_identity
