@@ -12,7 +12,7 @@ import random
 from stem import Signal
 from stem.control import Controller
 
-ver = "0.0.5"
+ver = "0.0.6"
 
 faceshappy = {
     "SLEEP" : '(⇀‿‿↼)',
@@ -120,6 +120,7 @@ while True:
             print(b)
             print(a)
             os.system("pip3 install -r requirements.txt")
+            os.system("sudo chown root:root start.sh;sudo chmod 700 start.sh")
         with Controller.from_port(port = 9051) as controller:
             controller.authenticate(password='B4C0D10DB03D880260505745B66DA5595E5E98543990DF5404728B2927')    
             clear()
