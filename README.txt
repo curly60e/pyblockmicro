@@ -25,14 +25,14 @@ Reboot
 ---
 sudo apt install ttf-mscorefonts-installer
 ---
+sudo apt install git
+git clone https://github.com/curly60e/pyblockmicro.git
+cd pyblockmicro
 sudo cp papertty.service /etc/systemd/system
 sudo systemctl daemon-reload
 sudo systemctl enable papertty
 sudo systemctl start papertty
 ---
-sudo apt install git
-git clone https://github.com/curly60e/pyblockmicro.git
-cd pyblockmicro
 sudo cp .bashrc /home/pi/ 
 sudo cp clocks.py /home/pi/
 cp start.sh /home/pi/
