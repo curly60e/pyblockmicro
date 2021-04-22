@@ -103,8 +103,6 @@ def blocks():
         os.system("python3 clocks.py")
         print("Bad Connection... Restarting... " + str(pp))
 
-#def checkupdate():
-
 while True:
     try:
         clear()
@@ -123,7 +121,7 @@ while True:
                 q = print(" ")
             else:
                 gitfetch = "git fetch"
-                gitchekcout = "git checkout origin/master -- .bashrc README.txt clocks.py clocksLOCAL.py papertty.service requirements.txt start.sh torrc "
+                gitchekcout = "git checkout origin/main -- .bashrc README.txt clocks.py clocksLOCAL.py papertty.service requirements.txt start.sh torrc "
                 clear()
                 b = os.popen(gitfetch).read()
                 a = os.popen(gitchekcout).read()
