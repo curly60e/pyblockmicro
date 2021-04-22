@@ -86,7 +86,7 @@ def blocks():
             n = r.text
             di = json.loads(n)
             a = di
-            if x != str(a):
+            if x < str(a):
                 clear()
                 output5 = subprocess.check_output(['sudo', 'iwgetid'])
                 z = str(output5)
@@ -98,7 +98,6 @@ def blocks():
                 print("PRICE")
                 CoingeckoPP()
                 b = str(a) 
-                CoingeckoPP()
     except:
         pp = random.choice(list(facessad.values())).encode('utf-8').decode('latin-1')
         os.system("python3 clocks.py")
