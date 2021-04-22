@@ -12,7 +12,7 @@ import random
 from stem import Signal
 from stem.control import Controller
 
-ver = "PyBLOCK Micro v0.0.2"
+ver = "PyBLOCK Micro v0.0.3"
 
 faceshappy = {
     "SLEEP" : '(⇀‿‿↼)',
