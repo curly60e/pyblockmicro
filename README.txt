@@ -4,6 +4,7 @@ CONNECT TO A WIFI NETWORK
 ---
 sudo apt update
 sudo apt upgrade
+sudo apt install tor
 sudo apt remove python3-pip python-pip
 sudo apt install python3-pip
 ---
@@ -29,5 +30,7 @@ cd /home/pi/
 sudo chown root:root start.sh;sudo chmod 700 start.sh
 ---
 sudo pip3 install -r requirements.txt
+---
+sudo cp torrc /etc/tor/
 ---
 reboot
