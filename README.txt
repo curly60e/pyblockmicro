@@ -1,3 +1,10 @@
+REQUIEREMENTS:
+
+1. Raspberry Pi Zero W
+2. WaveShare 2.13 ink screen V2.
+3. PiSugar battery.
+4. 16 GB microSD Card high performance.
+
 THIS VERSION WILL ONLY WORK WITH WIFI CONNECTION OR ETHERNET
 ---
 CONNECT TO A WIFI NETWORK
