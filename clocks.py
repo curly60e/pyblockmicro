@@ -12,7 +12,7 @@ import random
 from stem import Signal
 from stem.control import Controller
 
-ver = "0.0.9"
+ver = "0.0.10"
 
 faceshappy = {
     "SLEEP" : '(⇀‿‿↼)',
@@ -135,5 +135,6 @@ while True:
             os.system("sudo chown root:root start.sh;sudo chmod 700 start.sh")
         blocks()
     except:
-        print("\n")
-        sys.exit(101)
+        pp = random.choice(list(facessad.values())).encode('utf-8').decode('latin-1')
+        os.system("python3 clocks.py")
+        print("Bad Connection... Restarting... " + str(pp))
