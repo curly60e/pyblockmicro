@@ -12,7 +12,7 @@ import random
 from stem import Signal
 from stem.control import Controller
 
-ver = "0.0.11"
+ver = "0.0.12"
 
 faceshappy = {
     "SLEEP" : '(⇀‿‿↼)',
@@ -124,7 +124,7 @@ while True:
             print(" ")
         else:
             gitfetch = "git fetch"
-            gitchekcout = "git checkout origin/main -- .bashrc README.txt clocks.py clocksLOCAL.py papertty.service requirements.txt start.sh torrc "
+            gitchekcout = "git checkout origin/main -- .bashrc README.md clocks.py clocksLOCAL.py papertty.service requirements.txt start.sh torrc "
             clear()
             b = os.popen(gitfetch).read()
             a = os.popen(gitchekcout).read()
