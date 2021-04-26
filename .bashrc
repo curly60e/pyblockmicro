@@ -111,5 +111,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
+. torsocks on
 sudo python3 /home/pi/clocks.py
