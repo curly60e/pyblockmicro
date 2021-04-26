@@ -12,7 +12,7 @@ import random
 from stem import Signal
 from stem.control import Controller
 
-ver = "0.0.12"
+ver = "0.0.13"
 
 faceshappy = {
     "SLEEP" : '(⇀‿‿↼)',
@@ -62,6 +62,12 @@ def CoingeckoPP():
 
 def blocks():
     try:
+        btcInfo = CoinGeckoAPI()
+        k = btcInfo.get_price(ids='bitcoin', vs_currencies='usd')
+        q = k['bitcoin']
+        usd = q['usd']
+        h = (1 / usd) * 100000000
+        s = int(h)
         clear()
         r = requests.get('https://mempool.space/api/blocks/tip/height')
         r.headers['Content-Type']
@@ -77,7 +83,7 @@ def blocks():
         print("BLOCK " + str(pp))
         output = render(str(b), colors=['white', 'black'], align='center', font='simple')
         print(output)
-        print("PRICE")
+        print("PRICE: " + str(s) + " sats = 1 USD")
         CoingeckoPP()
         while True:
             x = b
@@ -87,6 +93,12 @@ def blocks():
             di = json.loads(n)
             a = di
             if x < str(a):
+                btcInfo = CoinGeckoAPI()
+                k = btcInfo.get_price(ids='bitcoin', vs_currencies='usd')
+                q = k['bitcoin']
+                usd = q['usd']
+                h = (1 / usd) * 100000000
+                s = int(h)
                 clear()
                 output5 = subprocess.check_output(['sudo', 'iwgetid'])
                 z = str(output5)
@@ -95,7 +107,7 @@ def blocks():
                 print("BLOCK " + str(pp))
                 output = render(str(a), colors=['white', 'black'], align='center', font='simple')
                 print(output)
-                print("PRICE")
+                print("PRICE: " + str(s) + " sats = 1 USD")
                 CoingeckoPP()
                 b = str(a) 
     except:
