@@ -21,6 +21,7 @@ CONNECT TO A WIFI NETWORK
 * sudo raspi-config
 
 - Interfacing Options -> SPI -> Yes
+- Set autologin to ON
   * Reboot
 ---
 * sudo apt install ttf-mscorefonts-installer
