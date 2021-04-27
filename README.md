@@ -35,6 +35,7 @@ CONNECT TO A WIFI NETWORK
 ---
 * sudo cp .bashrc /home/pi/ 
 * sudo cp clocks.py /home/pi/
+* sudo cp -r .git/ ..
 * cp start.sh /home/pi/
 * cd /home/pi/
 * sudo chown root:root start.sh;sudo chmod 700 start.sh
