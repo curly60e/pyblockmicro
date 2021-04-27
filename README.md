@@ -40,6 +40,7 @@ CONNECT TO A WIFI NETWORK
 * cd /home/pi/
 * sudo chown root:root start.sh;sudo chmod 700 start.sh
 ---
+* cd /home/pi/pyblockmicro/
 * sudo pip3 install -r requirements.txt
 ---
 * cd pyblockmicro
