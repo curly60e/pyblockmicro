@@ -8,7 +8,20 @@ REQUIEREMENTS:
 THIS VERSION WILL ONLY WORK WITH WIFI CONNECTION OR ETHERNET
 ---
 CONNECT TO A WIFI NETWORK
+
 ---
+EASY WAY
+
+* sudo apt install git
+* git clone https://github.com/curly60e/pyblockmicro.git
+* cd pyblockmicro
+* sudo first.sh
+---
+MANUAL WAY
+
+* sudo apt install git
+* git clone https://github.com/curly60e/pyblockmicro.git
+* cd pyblockmicro
 * sudo apt update
 * sudo apt upgrade
 * sudo apt install tor
