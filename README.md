@@ -47,7 +47,7 @@ CONNECT TO A WIFI NETWORK
 * cd pyblockmicro
 * sudo cp torrc /etc/tor/
 ---
-Setup PiSugar2 Battery 
+Setup PiSugar2 Battery (OPTIONAL)
 * curl http://cdn.pisugar.com/release/Pisugar-power-manager.sh | sudo bash
 ---
 * reboot
