@@ -32,7 +32,7 @@ CONNECT TO A WIFI NETWORK
 * sudo cp torrc /etc/tor/
 * sudo cp .bashrc /home/pi/ 
 * sudo cp clocks.py /home/pi/
-* sudo cp -r .git/ ..
+* sudo cp -r .git/ /home/pi/
 * sudo cp papertty.service /etc/systemd/system
 * sudo cp start.sh /home/pi/
 * cd /home/pi/
