@@ -10,6 +10,7 @@ sudo pip3 install -r requirements.txt
 sudo cp torrc /etc/tor/
 sudo cp .bashrc /home/pi/
 sudo cp clocks.py /home/pi/
+sudo cp boot.sh /home/pi/
 sudo cp -r .git/ /home/pi/
 sudo cp papertty.service /etc/systemd/system/
 sudo cp start.sh /home/pi/
