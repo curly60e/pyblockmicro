@@ -17,6 +17,12 @@ EASY WAY
 * cd pyblockmicro
 * sudo first.sh
 ---
+* sudo raspi-config
+
+- Interfacing Options -> SPI -> Yes
+- Set autologin to ON
+  * Reboot
+---
 MANUAL WAY
 
 * sudo apt install git
