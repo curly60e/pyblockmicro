@@ -11,9 +11,8 @@ import subprocess
 import random
 from stem import Signal
 from stem.control import Controller
-import subprocess
 
-ver = "0.0.14"
+ver = "0.0.15"
 
 service = "pisugar-server"
 p =  subprocess.Popen(["systemctl", "is-active",  service], stdout=subprocess.PIPE)
@@ -86,12 +85,14 @@ def blocks():
         output5 = subprocess.check_output(['sudo', 'iwgetid'])
         z = str(output5)
         w = """echo "get battery" | nc -q 0 127.0.0.1 8423"""
+        #t = os.popen(str(w)).read()
         print("PyBLOCK Micro " + ver + " ---> Connected to: " + z.split('"')[1] + " & Tor")
-        print("BLOCK " + str(pp) + " " + os.popen(str(w)).read())
+        print("BLOCK " + str(pp))
         output = render(str(b), colors=['white', 'black'], align='center', font='simple')
         print(output)
         print("PRICE: " + str(s) + " sats = 1 USD")
         CoingeckoPP()
+        #print(str(t))
         while True:
             x = b
             r = requests.get('https://mempool.space/api/blocks/tip/height')
@@ -108,15 +109,18 @@ def blocks():
                 s = int(h)
                 clear()
                 w = """echo "get battery" | nc -q 0 127.0.0.1 8423"""
+                #t = os.popen(str(w)).read()
                 output5 = subprocess.check_output(['sudo', 'iwgetid'])
                 z = str(output5)
                 pp = random.choice(list(faceshappy.values())).encode('utf-8').decode('latin-1')
                 print("PyBLOCK Micro " + ver + " ---> Connected to: " + z.split('"')[1] + " & Tor")
-                print("BLOCK " + str(pp) + " " + os.popen(str(w)).read())
+                print("BLOCK " + str(pp))
                 output = render(str(b), colors=['white', 'black'], align='center', font='simple')
                 print(output)
                 print("PRICE: " + str(s) + " sats = 1 USD")
                 b = str(a) 
+                CoingeckoPP()
+                #print(str(t))
     except:
         pp = random.choice(list(facessad.values())).encode('utf-8').decode('latin-1')
         os.system("python3 clocks.py")
@@ -133,7 +137,6 @@ while True:
             print("Starting PyBLOCK Micro")
             pp = random.choice(list(faceslookaround.values())).encode('utf-8').decode('latin-1')
             print(pp)
-            t.sleep(5)
             clear()
         r = requests.get('https://raw.githubusercontent.com/curly60e/pyblockmicro/main/ver.txt')
         r.headers['Content-Type']
