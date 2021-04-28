@@ -16,7 +16,6 @@ python-cfonts
 pycoingecko
 protobuf==3.13.0
 six==1.15.0
-pillow
 numpy
 grpcio
 service_identity
