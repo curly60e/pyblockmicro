@@ -33,10 +33,10 @@ CONNECT TO A WIFI NETWORK
 * sudo cp .bashrc /home/pi/ 
 * sudo cp clocks.py /home/pi/
 * sudo cp -r .git/ ..
-* cp start.sh /home/pi/
+* sudo cp papertty.service /etc/systemd/system
+* sudo cp start.sh /home/pi/
 * cd /home/pi/
 * sudo chown root:root start.sh;sudo chmod 700 start.sh
-* sudo cp papertty.service /etc/systemd/system
 * sudo systemctl daemon-reload
 * sudo systemctl enable papertty
 * sudo systemctl start papertty
