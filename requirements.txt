@@ -3,7 +3,6 @@
 #
 ###### Requirements without Version Specifiers ######
 art
-qrcode
 requests
 simplejson
 certifi
@@ -13,17 +12,13 @@ python-gnupg
 requests
 sseclient-py
 urllib3
-lnpay-py
-xmltodict
 python-cfonts
-termcolor
 pycoingecko
 protobuf==3.13.0
 six==1.15.0
 pillow
 numpy
 grpcio
-pdfminer
 service_identity
 stem
 #
