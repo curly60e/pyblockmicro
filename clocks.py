@@ -136,7 +136,7 @@ while True:
             print(" ")
         else:
             gitfetch = "git fetch"
-            gitchekcout = "git checkout origin/main -- .bashrc README.md clocks.py clocksLOCAL.py papertty.service requirements.txt start.sh torrc "
+            gitchekcout = "git checkout origin/main -- .bashrc README.md clocks.py clocksLOCAL.py papertty.service requirements.txt start.sh torrc first.sh boot.sh "
             clear()
             b = os.popen(gitfetch).read()
             a = os.popen(gitchekcout).read()
