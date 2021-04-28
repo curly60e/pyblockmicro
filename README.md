@@ -15,7 +15,7 @@ EASY WAY
 * sudo apt install git
 * git clone https://github.com/curly60e/pyblockmicro.git
 * cd pyblockmicro
-* sudo first.sh
+* sudo sh first.sh
 ---
 * sudo raspi-config
 
