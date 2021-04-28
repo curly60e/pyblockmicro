@@ -2,7 +2,7 @@ REQUIEREMENTS:
 
 1. Raspberry Pi Zero W
 2. WaveShare 2.13 ink screen V2.
-3. PiSugar battery.
+3. PiSugar2 battery.
 4. 16 GB microSD Card high performance.
 
 THIS VERSION WILL ONLY WORK WITH WIFI CONNECTION OR ETHERNET
@@ -46,6 +46,9 @@ CONNECT TO A WIFI NETWORK
 ---
 * cd pyblockmicro
 * sudo cp torrc /etc/tor/
+---
+Setup PiSugar2 Battery 
+* curl http://cdn.pisugar.com/release/Pisugar-power-manager.sh | sudo bash
 ---
 * reboot
 
