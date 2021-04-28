@@ -12,7 +12,7 @@ import random
 from stem import Signal
 from stem.control import Controller
 
-ver = "0.0.16"
+ver = "0.0.17"
 
 
 faceshappy = {
@@ -113,7 +113,7 @@ def blocks():
                 CoingeckoPP()
     except:
         pp = random.choice(list(facessad.values())).encode('utf-8').decode('latin-1')
-        os.system("python3 clocks.py")
+        os.system("sudo sh boot.sh")
         print("Bad Connection... Restarting... " + str(pp))
 
 while True:
@@ -147,5 +147,5 @@ while True:
         blocks()
     except:
         pp = random.choice(list(facessad.values())).encode('utf-8').decode('latin-1')
-        os.system("python3 clocks.py")
+        os.system("sudo sh boot.sh")
         print("Bad Connection... Restarting... " + str(pp))
