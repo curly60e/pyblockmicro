@@ -12,12 +12,8 @@ import random
 from stem import Signal
 from stem.control import Controller
 
-ver = "0.0.15"
+ver = "0.0.16"
 
-service = "pisugar-server"
-p =  subprocess.Popen(["systemctl", "is-active",  service], stdout=subprocess.PIPE)
-(outputsugar, err) = p.communicate()
-outputsugar = outputsugar.decode('utf-8')
 
 faceshappy = {
     "SLEEP" : '(⇀‿‿↼)',
@@ -84,15 +80,12 @@ def blocks():
         pp = random.choice(list(faceslookaround.values())).encode('utf-8').decode('latin-1')
         output5 = subprocess.check_output(['sudo', 'iwgetid'])
         z = str(output5)
-        w = """echo "get battery" | nc -q 0 127.0.0.1 8423"""
-        #t = os.popen(str(w)).read()
         print("PyBLOCK Micro " + ver + " ---> Connected to: " + z.split('"')[1] + " & Tor")
         print("BLOCK " + str(pp))
         output = render(str(b), colors=['white', 'black'], align='center', font='simple')
         print(output)
         print("PRICE: " + str(s) + " sats = 1 USD")
         CoingeckoPP()
-        #print(str(t))
         while True:
             x = b
             r = requests.get('https://mempool.space/api/blocks/tip/height')
@@ -108,8 +101,6 @@ def blocks():
                 h = (1 / usd) * 100000000
                 s = int(h)
                 clear()
-                w = """echo "get battery" | nc -q 0 127.0.0.1 8423"""
-                #t = os.popen(str(w)).read()
                 output5 = subprocess.check_output(['sudo', 'iwgetid'])
                 z = str(output5)
                 pp = random.choice(list(faceshappy.values())).encode('utf-8').decode('latin-1')
@@ -120,7 +111,6 @@ def blocks():
                 print("PRICE: " + str(s) + " sats = 1 USD")
                 b = str(a) 
                 CoingeckoPP()
-                #print(str(t))
     except:
         pp = random.choice(list(facessad.values())).encode('utf-8').decode('latin-1')
         os.system("python3 clocks.py")
