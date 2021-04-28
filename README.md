@@ -16,7 +16,6 @@ CONNECT TO A WIFI NETWORK
 * sudo apt install python3-pip
 ---
 * sudo apt install libopenjp2-7 libtiff5
-* sudo pip3 install papertty
 ---
 * sudo raspi-config
 
@@ -29,23 +28,18 @@ CONNECT TO A WIFI NETWORK
 * sudo apt install git
 * git clone https://github.com/curly60e/pyblockmicro.git
 * cd pyblockmicro
-* sudo cp papertty.service /etc/systemd/system
-* sudo systemctl daemon-reload
-* sudo systemctl enable papertty
-* sudo systemctl start papertty
----
+* sudo pip3 install -r requirements.txt
+* sudo cp torrc /etc/tor/
 * sudo cp .bashrc /home/pi/ 
 * sudo cp clocks.py /home/pi/
 * sudo cp -r .git/ ..
 * cp start.sh /home/pi/
 * cd /home/pi/
 * sudo chown root:root start.sh;sudo chmod 700 start.sh
----
-* cd /home/pi/pyblockmicro/
-* sudo pip3 install -r requirements.txt
----
-* cd pyblockmicro
-* sudo cp torrc /etc/tor/
+* sudo cp papertty.service /etc/systemd/system
+* sudo systemctl daemon-reload
+* sudo systemctl enable papertty
+* sudo systemctl start papertty
 ---
 Setup PiSugar2 Battery (OPTIONAL)
 * curl http://cdn.pisugar.com/release/Pisugar-power-manager.sh | sudo bash
