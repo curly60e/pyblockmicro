@@ -11,8 +11,14 @@ import subprocess
 import random
 from stem import Signal
 from stem.control import Controller
+import subprocess
 
-ver = "0.0.13"
+ver = "0.0.14"
+
+service = "pisugar-server"
+p =  subprocess.Popen(["systemctl", "is-active",  service], stdout=subprocess.PIPE)
+(outputsugar, err) = p.communicate()
+outputsugar = outputsugar.decode('utf-8')
 
 faceshappy = {
     "SLEEP" : '(⇀‿‿↼)',
@@ -79,8 +85,9 @@ def blocks():
         pp = random.choice(list(faceslookaround.values())).encode('utf-8').decode('latin-1')
         output5 = subprocess.check_output(['sudo', 'iwgetid'])
         z = str(output5)
+        w = """echo "get battery" | nc -q 0 127.0.0.1 8423"""
         print("PyBLOCK Micro " + ver + " ---> Connected to: " + z.split('"')[1] + " & Tor")
-        print("BLOCK " + str(pp))
+        print("BLOCK " + str(pp) + " " + os.popen(str(w)).read())
         output = render(str(b), colors=['white', 'black'], align='center', font='simple')
         print(output)
         print("PRICE: " + str(s) + " sats = 1 USD")
@@ -100,15 +107,15 @@ def blocks():
                 h = (1 / usd) * 100000000
                 s = int(h)
                 clear()
+                w = """echo "get battery" | nc -q 0 127.0.0.1 8423"""
                 output5 = subprocess.check_output(['sudo', 'iwgetid'])
                 z = str(output5)
                 pp = random.choice(list(faceshappy.values())).encode('utf-8').decode('latin-1')
                 print("PyBLOCK Micro " + ver + " ---> Connected to: " + z.split('"')[1] + " & Tor")
-                print("BLOCK " + str(pp))
-                output = render(str(a), colors=['white', 'black'], align='center', font='simple')
+                print("BLOCK " + str(pp) + " " + os.popen(str(w)).read())
+                output = render(str(b), colors=['white', 'black'], align='center', font='simple')
                 print(output)
                 print("PRICE: " + str(s) + " sats = 1 USD")
-                CoingeckoPP()
                 b = str(a) 
     except:
         pp = random.choice(list(facessad.values())).encode('utf-8').decode('latin-1')
