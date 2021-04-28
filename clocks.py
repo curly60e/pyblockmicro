@@ -12,7 +12,7 @@ import random
 from stem import Signal
 from stem.control import Controller
 
-ver = "0.0.17"
+ver = "0.0.18"
 
 
 faceshappy = {
@@ -137,11 +137,14 @@ while True:
         else:
             gitfetch = "git fetch"
             gitchekcout = "git checkout origin/main -- .bashrc README.md clocks.py clocksLOCAL.py papertty.service requirements.txt start.sh torrc first.sh boot.sh "
+            rootfile = "sudo chown root:root start.sh;sudo chmod 700 start.sh"
             clear()
             b = os.popen(gitfetch).read()
             a = os.popen(gitchekcout).read()
+            root = os.popen(rootfile).read()
             print(b)
             print(a)
+            print(root)
             os.system("pip3 install -r requirements.txt")
             os.system("sudo chown root:root start.sh;sudo chmod 700 start.sh")
         blocks()
