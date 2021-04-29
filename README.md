@@ -18,8 +18,6 @@ EASY WAY
 * sudo sh first.sh
 ---
 * sudo raspi-config
-
-- Interfacing Options -> SPI -> Yes
 - Set autologin to ON
   * Reboot
 ---
