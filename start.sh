@@ -8,4 +8,4 @@
 ## sudo chown root:root start.sh; sudo chmod 700 start.sh
 ##
 
-papertty --nopartial --driver epd2in13v2 terminal --size 16 --autofit --sleep 10
+papertty --nopartial --driver epd2in13v2 terminal --size 16 --autofit 
