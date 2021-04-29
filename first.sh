@@ -10,7 +10,7 @@ echo " "
 sudo sed -i 's/dtparam=spi=off/dtparam=spi=on/g' /boot/config.txt
 sudo sed -i 's/#dtparam=spi=on/dtparam=spi=on/g' /boot/config.txt
 
-echo "Downloading packages required for the display to work..."
+echo "Installing packages required for the display to work..."
 sudo apt remove python3-pip python-pip
 sudo apt install tor python3-pip libopenjp2-7 libtiff5 ttf-mscorefonts-installer 
 echo " "
