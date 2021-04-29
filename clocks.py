@@ -12,7 +12,7 @@ import random
 from stem import Signal
 from stem.control import Controller
 
-ver = "0.0.18"
+ver = "0.0.19"
 
 
 faceshappy = {
@@ -106,11 +106,11 @@ def blocks():
                 pp = random.choice(list(faceshappy.values())).encode('utf-8').decode('latin-1')
                 print("PyBLOCK Micro " + ver + " ---> Connected to: " + z.split('"')[1] + " & Tor")
                 print("BLOCK " + str(pp))
-                output = render(str(b), colors=['white', 'black'], align='center', font='simple')
+                output = render(str(a), colors=['white', 'black'], align='center', font='simple')
                 print(output)
                 print("PRICE: " + str(s) + " sats = 1 USD")
-                b = str(a) 
                 CoingeckoPP()
+                b = str(a) 
     except:
         pp = random.choice(list(facessad.values())).encode('utf-8').decode('latin-1')
         os.system("sudo sh boot.sh")
