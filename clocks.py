@@ -12,7 +12,7 @@ import random
 from stem import Signal
 from stem.control import Controller
 
-ver = "0.0.19"
+ver = "0.0.20"
 
 
 faceshappy = {
@@ -118,16 +118,6 @@ def blocks():
 
 while True:
     try:
-        with Controller.from_port(port = 9051) as controller:
-            controller.authenticate(password='B4C0D10DB03D880260505745B66DA5595E5E98543990DF5404728B2927')    
-            clear()
-            print("Success!")
-            controller.signal(Signal.NEWNYM)
-            print("New Tor connection processed")
-            print("Starting PyBLOCK Micro")
-            pp = random.choice(list(faceslookaround.values())).encode('utf-8').decode('latin-1')
-            print(pp)
-            clear()
         r = requests.get('https://raw.githubusercontent.com/curly60e/pyblockmicro/main/ver.txt')
         r.headers['Content-Type']
         n = r.text
