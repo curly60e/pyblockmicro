@@ -110,7 +110,7 @@ Mobile Phone tethering to your PyBLOCK micro over Bluetooth ONLY ANDROID.
 
 ``* sudo nano /etc/dhcpcd.conf``
 
-  --- Add this lines ---
+  --- Add these lines ---
   
  ``interface bnep0``
   
