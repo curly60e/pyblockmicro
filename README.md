@@ -205,6 +205,8 @@ ON YOUR RPI TYPE...
   
 ``* sudo chown root:root check-and-connect-bt-pan.sh; sudo chmod 700 check-and-connect-bt-pan.sh ``
 
+``* sudo chown root:root startbt.sh; sudo chmod 700 startbt.sh ``
+
 ``* sudo bluetoothctl``
 
 ``* [bluetooth]# scan on``
