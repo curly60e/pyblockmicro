@@ -106,6 +106,8 @@ Mobile Phone tethering to your PyBLOCK micro over Bluetooth ONLY ANDROID.
 
 ``* sudo apt-get install bluetooth bluez-utils bluez-compat``
 
+``* sudo apt install python-dbus``
+
 ``* git clone https://github.com/WayneKeenan/RaspberryPi_BTPAN_AutoConnect.git``
 
 ``* sudo nano /etc/dhcpcd.conf``
