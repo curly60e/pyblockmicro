@@ -14,8 +14,8 @@ sseclient-py
 urllib3
 python-cfonts
 pycoingecko
-protobuf==3.13.0
-six==1.15.0
+protobuf
+six
 numpy
 grpcio
 service_identity
